@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchant Details</title>
+    <link rel="stylesheet" href="./styles/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="./img/BlueCode.svg">
+</head>
+    <style>
+        @media (max-width: 1080px) {
+            body::before {
+                content: "";
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-image: none;
+                background-repeat: no-repeat;
+                background-size: cover; 
+                background-size: 105%;
+                z-index: -1;
+                filter: brightness(0.8);
+            }
+            
+            .container {
+                background-color: #f4f4f4;
+                padding: 30px;
+                box-shadow: none;
+                width: 100%;
+                max-width: 450px;
+            }
+        }
+    </style>
+<body>
+    <div class="container">
+        <div class="title-section">
+            <a href="./home.html" id="backButton">
+                <i class="fa fa-angle-left" style="font-size: 24px;"></i>
+            </a>
+            <h1>Get Merchant Details</h1>
+        </div>
+        <form id="fetchMerchantForm">
+            <div class="form-group">
+                <label for="merchant_ext_id">Merchant External ID:</label>
+                <input type="text" id="merchant_ext_id" name="merchant_ext_id" required>
+            </div>
+            <button type="submit" class="submit-button">Get Merchant Details</button>
+        </form>
+
+        <div id="merchantDetails" style="display: none;">
+            <h2>Merchant Details</h2>
+            <p><strong>Name:</strong> <span id="merchantName"></span></p>
+            <p><strong>State:</strong> <span id="merchantState"></span></p>
+            <p><strong>Address:</strong> <span id="merchantAddress"></span></p>
+            <p><strong>Contact Name:</strong> <span id="contactName"></span></p>
+            <p><strong>Contact Email:</strong> <span id="contactEmail"></span></p>
+            <p><strong>Contact Phone:</strong> <span id="contactPhone"></span></p>
+            <p><strong>Category Code:</strong> <span id="categoryCode"></span></p>
+            <p><strong>External ID:</strong> <span id="extId"></span></p>
+            <p><strong>Billing Period:</strong> <span id="billingPeriod"></span></p>
+            <p><strong>Transaction Settings:</strong> <span id="transactionSettings"></span></p>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

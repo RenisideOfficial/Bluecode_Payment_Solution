@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluecode</title>
+    <link rel="stylesheet" href="./styles/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="./img/BlueCode.svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+<body>
+    <div class="container">
+        <section class="nav">
+            <div class="left-side">
+                <div class="branding" style="gap: 10px;">
+                    <img style="width: 8%;" src="./img/bluecode_white.png" alt="" class="branding-img">
+                    <div style="display: flex;">
+                        <h3 class="branding-title">bluecode</h3>
+                        <p style="font-size: 16px; color: #FFFFFF;">®</p>
+                    </div>
+                </div>
+            </div>
+            <div class="hamburger-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="right-side">
+                <div class="close-menu">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="right-side-element">
+                    <a href="#home">Home</a>
+                </div>
+                <div class="right-side-element dropdown">
+                    <a href="#">Merchant <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="./merchant.html">Create Merchant</a>
+                        <a href="./merchant_details.html">Get Details</a>
+                    </div>
+                </div>
+                <div class="right-side-element dropdown">
+                    <a href="#">Branch <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="./branch.html">Create Branch</a>
+                        <a href="./branch_details.html">Get Details</a>
+                        <a href="./update_branch.html">Update Branch</a>
+                    </div>
+                </div>
+                <div class="right-side-element">
+                    <button onclick="scanBarcodePage()" id="scan-btn">Scan Barcode</button>
+                </div>
+            </div>
+        </section>
+        <section class="hero">
+            <div class="hero-content">
+                <h2 class="hero-title">Next Generation Mobile Payments</h2>
+                <p class="hero-description">Bluecode is a mobile contactless payment, on the account rails of local financial institutions. No need for a card, or card schemes.</p>
+                <h3>Select Payment Method</h3>
+                <div class="hero-buttons">
+                    <button onclick="barcodePage()" class="short-code-btn">Short Code</button>
+                    <button onclick="qrcodePage()" class="qr-code-btn">QR Code Scan</button>
+                </div>
+            </div>
+        </section>
+            <!-- Slider main container -->
+        <div class="swiper">
+            <h1 style="margin-left: 15%;">What's New on Bluecode?</h1>
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper">
+              <!-- Slides -->
+                <div class="swiper-slide">
+                    <img src="./img/blueImgs/blueImg1.jpg" alt="">
+                    <p>Bluecode is a mobile contactless payment, on the account rails of local financial institutions. <br>
+                       No need for a card, or card schemes.</p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/blueImgs/blueImg2.jpg" alt="">
+                    <p>Viva.com and Bluecode have partnered, allowing merchants to accept Bluecode QR payments via <br>
+                       the Viva.com platform. </p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/blueImgs/blueImg3.jpg" alt="">
+                    <p>Bluecode is a mobile payment system that utilizes barcode and QR code scanning, <br>
+                        as well as NFC technology, for contactless payments. </p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/blueImgs/blueImg4.jpg" alt="">
+                    <p>Bluecode has created an innovative solution that combines 40+ local payment networks into the <br>
+                       largest global payment network. </p>
+                </div>
+                <div class="swiper-slide">
+                    <img src="./img/blueImgs/blueImg5.jpg" alt="">
+                    <p> has recently expanded to include NFC (Near Field Communication) payments, enabling users to <br>
+                        tap their smartphones at payment terminal. </p>
+                </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    </div>
+    <!-- Footer Section -->
+    <footer style="background-color: #004899; color: white; padding: 20px; text-align: center; margin-top: 50px;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div id="footer-element" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
+                <!-- Company Section -->
+                <div style="flex: 1; min-width: 200px; margin: 10px;">
+                    <h3>Company</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: white; text-decoration: none;">About us</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Media</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Contact us</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Privacy Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- Consumers Section -->
+                <div style="flex: 1; min-width: 200px; margin: 10px;">
+                    <h3>Consumers</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: white; text-decoration: none;">Bluecode App</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Rewards</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Security</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Business Partners Section -->
+                <div style="flex: 1; min-width: 200px; margin: 10px;">
+                    <h3>Business Partners</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: white; text-decoration: none;">Merchants</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Issuers / Banks</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">Acquirers / PSD2</a></li>
+                        <li><a href="#" style="color: white; text-decoration: none;">POS Providers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Connect with Us Section -->
+                <div style="flex: 1; min-width: 200px; margin: 10px;">
+                    <h3>Connect with Us</h3>
+                    <div class="connect" style="display: flex; gap: 10px; margin: 20px 0 0 75px;">
+                        <a href="#" style="color: white; text-decoration: none;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" style="color: white; text-decoration: none;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" style="color: white; text-decoration: none;"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" style="color: white; text-decoration: none;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Copyright Section -->
+            <div style="margin-top: 20px; border-top: 1px solid white; padding-top: 10px;">
+                <p>Copyright © 2025 Bluecode</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function barcodePage() {
+            window.location.href = "./shortcode.html";
+        }
+
+        function qrcodePage() {
+            window.location.href = "./qrcode.html";
+        }
+
+        function scanBarcodePage() {
+            window.location.href = "./barcode_scanner.html";
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.querySelector('.hamburger-menu');
+            const close = document.querySelector('.close-menu');
+            const rightSide = document.querySelector('.right-side');
+
+            hamburger.addEventListener('click', function() {
+                rightSide.classList.add('show');
+            });
+
+            close.addEventListener('click', function() {
+                rightSide.classList.remove('show');
+            });
+        });
+    </script>
+    <script src="./js/swiper.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!-- QR code payment script -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Payment</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="./img/BlueCode.svg">
+</head>
+    <style>
+        @media (max-width: 600px) {
+            #keypad {
+                position: relative;
+                left: 0%;
+            }
+        }
+        @media (max-width: 300px) {
+            #keypad {
+                position: relative;
+                left: 8%;
+            }
+        }
+        @media (max-width: 400px) {
+            
+            .makePayment h1 {
+                font-size: larger;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+            }
+        }
+    </style>
+<body>
+    <div class="branding" style="gap: 10px;">
+        <img src="./img/bluecode_blue.png" alt="" class="branding-img">
+        <div style="display: flex;">
+            <h3 class="branding-title">bluecode</h3>
+            <p style="font-size: 18px; margin-top: 2.1rem; color: #004899;">®</p>
+        </div>
+    </div>
+    <div class="makePayment">
+        <a href="./home.html" id="backButton">
+            <i class="fa fa-angle-left" style="font-size: 24px; margin-right: 10px; position: relative; right: 35px;"></i>
+        </a>
+        <h1>Make Payment</h1>
+        <a onclick="refreshPage()" id="refreshButton">
+            <i class="fa fa-refresh" style="font-size: 20px;"></i>
+        </a>
+    </div>
+    <div class="container">
+        <p hidden>Enter your text or URL</p>
+        <input type="text" placeholder="Text or URL" id="qrText" hidden>
+        <div></div>
+        <div id="imgBox">
+            <img src="" id="qrImage">
+        </div>
+        <div id="qrUpdate">
+            <p id="scan-text">Scan the QR Code</p>
+            <p id="countdown"> 60s</p> <!-- Countdown timer -->
+        </div>
+        <h2 id="status"></h2>
+        <div id="keypad">
+            <input type="text" id="amount" placeholder="NGN .00" readonly>
+            <button onclick="addNumber('1')">1</button>
+            <button onclick="addNumber('2')">2</button>
+            <button onclick="addNumber('3')">3</button>
+            <button onclick="addNumber('4')">4</button>
+            <button onclick="addNumber('5')">5</button>
+            <button onclick="addNumber('6')">6</button>
+            <button onclick="addNumber('7')">7</button>
+            <button onclick="addNumber('8')">8</button>
+            <button onclick="addNumber('9')">9</button>
+            <button onclick="clearAmount()">C</button>
+            <button onclick="addNumber('0')">0</button>
+            <button onclick="deleteNumber()">DEL</button>
+            <button id="generate-btn">Generate QR Code</button>
+        </div>
+    </div>
+
+    <script src="./js/qrcode.js"></script>
+</body>
+</html>

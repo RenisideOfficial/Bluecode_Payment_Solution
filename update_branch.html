@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Branch</title>
+    <link rel="stylesheet" href="./styles/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="./img/BlueCode.svg">
+</head>
+<body>
+    <div class="container">
+        <div class="title-section">
+            <a href="./home.html" id="backButton">
+                <i class="fa fa-angle-left" style="font-size: 24px;"></i>
+            </a>
+            <h1>Update Branch Details</h1>
+        </div>
+        <form id="updateBranchForm">
+            <!-- Merchant and Branch IDs -->
+            <div class="form-group">
+                <label for="merchant_ext_id">Merchant External ID:</label>
+                <input type="text" id="merchant_ext_id" name="merchant_ext_id" required>
+            </div>
+            <div class="form-group">
+                <label for="branch_ext_id">Branch External ID:</label>
+                <input type="text" id="branch_ext_id" name="branch_ext_id" required>
+            </div>
+
+            <!-- Branch Name -->
+            <div class="form-group">
+                <label for="name">New Branch Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <!-- Address -->
+            <div class="form-group">
+                <label for="city">New City:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-group">
+                <label for="line_1">New Address Line 1:</label>
+                <input type="text" id="line_1" name="line_1" required>
+            </div>
+            <div class="form-group">
+                <label for="line_2">New Address Line 2:</label>
+                <input type="text" id="line_2" name="line_2">
+            </div>
+            <div class="form-group">
+                <label for="zip">New ZIP Code:</label>
+                <input type="text" id="zip" name="zip" required>
+            </div>
+            <div class="form-group">
+                <label for="country">New Country (2-letter code):</label>
+                <input type="text" id="country" name="country" maxlength="2" required>
+            </div>
+
+            <!-- Contact -->
+            <div class="form-group">
+                <label for="contact_name">New Contact Name:</label>
+                <input type="text" id="contact_name" name="contact_name" required>
+            </div>
+            <div class="form-group">
+                <label for="contact_email">New Contact Email:</label>
+                <input type="email" id="contact_email" name="contact_email" required>
+            </div>
+            <div class="form-group">
+                <label for="contact_phone">New Contact Phone (e.g., +2348164582329):</label>
+                <input type="text" id="contact_phone" name="contact_phone" pattern="\+234\d{10}" required>
+            </div>
+            <div class="form-group">
+                <label for="gender">Contact Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="MALE">Male</option>
+                    <option value="FEMALE">Female</option>
+                    <option value="OTHER">Other</option>
+                </select>
+            </div>
+
+            <!-- Booking Reference Prefix -->
+            <div class="form-group">
+                <label for="booking_reference_prefix">Booking Reference Prefix:</label>
+                <input type="text" id="booking_reference_prefix" name="booking_reference_prefix" required>
+            </div>
+
+            <!-- State -->
+            <div class="form-group">
+                <label for="state">New State:</label>
+                <select id="state" name="state" required>
+                    <option value="ACTIVE">Active</option>
+                    <option value="DISABLED">Disabled</option>
+                    <option value="SUSPENDED">Suspended</option>
+                </select>
+            </div>
+
+            <!-- Virtual Terminal -->
+            <div class="form-group">
+                <label for="virtual_terminal">Virtual Terminal (JSON):</label>
+                <textarea id="virtual_terminal" name="virtual_terminal" rows="4" required>{}</textarea>
+            </div>
+
+            <button type="submit" class="submit-button">Update Branch</button>
+        </form>
+
+        <!-- Section to display the update status -->
+        <div id="updateStatus" style="display: none; margin-top: 20px;">
+            <h2>Branch Updated Successfully!</h2>
+            <p>The branch details have been updated.</p>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>

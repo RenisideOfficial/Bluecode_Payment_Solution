@@ -1,0 +1,59 @@
+@font-face {
+  font-family: 'Niveau Grotesk';
+  src: url('../fonts/NiveauGroteskMedium.woff2') format('woff2'),
+       url('../fonts/NiveauGroteskMedium.woff2') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'Niveau Grotesk', Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f4f4f9;
+}
+
+:root {
+  --blue: #004899;
+  --light: #39618f;
+  --white: #FFFFFF;
+  --black: #111111;
+  --gray: rgb(225, 225, 225);
+}
+
+.scanner-container {
+  text-align: center;
+}
+
+.viewport {
+  width: 100%;
+  max-width: 640px;
+  height: 480px;
+  margin: 20px auto;
+  border: 2px solid #ccc;
+  position: relative;
+  overflow: hidden;
+}
+
+#result {
+  font-size: 1.2em;
+  color: #333;
+  margin: 20px 0;
+}
+
+#rescan-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#rescan-button:hover {
+  background-color: var(--light);
+}

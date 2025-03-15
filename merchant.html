@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Merchant</title>
+    <link rel="stylesheet" href="./styles/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="image/x-icon" href="./img/BlueCode.svg">
+</head>
+<body>
+    <div class="container">
+        <div class="title-section">
+            <a href="./home.html" id="backButton">
+                <i class="fa fa-angle-left" style="font-size: 24px;"></i>
+            </a>
+            <h1>Create Merchant</h1>
+            <a href="./merchant_details.html" id="frontButton">
+                <i class="fa fa-angle-right" style="font-size: 24px;"></i>
+            </a>
+        </div>
+        <form id="merchantForm">
+            <div class="form-group">
+                <label for="name">Merchant Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category_code">Category Code:</label>
+                <input type="text" id="category_code" name="category_code" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City:</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+
+            <div class="form-group">
+                <label for="country">Country (2-letter code) e.g., NG:</label>
+                <input type="text" id="country" name="country" maxlength="2" required>
+            </div>
+
+            <div class="form-group">
+                <label for="zip">ZIP Code:</label>
+                <input type="text" id="zip" name="zip" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contact_name">Contact Name:</label>
+                <input type="text" id="contact_name" name="contact_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contact_email">Contact Email:</label>
+                <input type="email" id="contact_email" name="contact_email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contact_phone">Contact Phone (e.g., +2348164582329):</label>
+                <input type="text" id="contact_phone" name="contact_phone" pattern="\+234\d{10}" required>
+            </div>
+
+            <button type="submit" class="submit-button">Create Merchant</button>
+        </form>
+
+        <!-- New section to display the generated ext_id -->
+        <div id="extIdDisplay" style="display: none; margin-top: 20px;">
+            <h2>Merchant Created Successfully!</h2>
+            <p><strong>Your Merchant External ID (ext_id):</strong> <span id="generatedExtId"></span></p>
+            <p>Please save this ID. You will need it to fetch your merchant details later.</p>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
