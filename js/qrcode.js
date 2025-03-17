@@ -38,12 +38,12 @@ function generateRandomId() {
     return result;
 }
 
-// Function to generate the QR code
-const generateQR = (checkinCode) => {
+// Function to generate the QR code using emv_content
+const generateQR = (emvContent) => {
     const imgBox = document.getElementById("imgBox");
     const qrImage = document.getElementById("qrImage");
 
-    qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${checkinCode}`;
+    qrImage.src = `https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=${emvContent}`;
     imgBox.classList.add("show-img");
 };
 
@@ -151,29 +151,11 @@ generateButton.addEventListener('click', async () => {
             const result = await response.json();
             console.log("API Response:", result);
 
-            let checkinCode = result.payment.checkin_code;
-            console.log(checkinCode); // Inspect the value
+            let emvContent = result.payment.emv_content; // Use emv_content instead of checkin_code
+            console.log(emvContent); // Inspect the value
 
-            // Extract the URL using string manipulation
-            const urlStartIndex = checkinCode.indexOf("AB.c");
-            if (urlStartIndex !== -1) {
-                checkinCode = "https://go.pay.int.bluecode.ng/1/m/bc?bc=" + checkinCode.substring(urlStartIndex); // Add https://
-            } else {
-                console.error("URL not found in checkin_code");
-                alert("Error generating QR code.");
-                return;
-            }
-
-            // Remove the unwanted part
-            const unwantedIndex = checkinCode.lastIndexOf("5204"); //finding the last instance of 5204
-            if (unwantedIndex !== -1) {
-                checkinCode = checkinCode.substring(0, unwantedIndex);
-            }
-
-            console.log("Checkin Code (URL):", checkinCode);
-
-            // Generate the QR code
-            generateQR(checkinCode);
+            // Generate the QR code using emv_content
+            generateQR(emvContent);
 
             // Display initial payment status
             displayStatus(result.payment.state);
