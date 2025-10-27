@@ -14,6 +14,8 @@ function generateRandomId() {
 /* NB: The localhost listens for requests from the webbrowser and 
 sends those requests to the api thereby bypass the CORS webbrowser policy */
 const API_BASE_URL = "http://localhost:8080/api/v2"; // Proxy server URL
+const ACQUIBASE_USERNAME_PASSWORD = process.env.ACQUIBASE_USERNAME_PASSWORD;
+const MEMBER_ID = process.env.MEMBER_ID;
 
 // Function to create a merchant
 async function createMerchant(merchantData) {
@@ -25,11 +27,7 @@ async function createMerchant(merchantData) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "Basic " +
-          btoa(
-            "fc1f9f72-02c9-47e2-99ea-bc33ba2906d4:da1616ef-caad-4c7b-b7af-e9b98fb97960"
-          ),
+        Authorization: "Basic " + btoa(ACQUIBASE_USERNAME_PASSWORD),
       },
       body: JSON.stringify({
         merchant: {
@@ -70,7 +68,7 @@ async function createMerchant(merchantData) {
           transaction_settings: {
             default_source: "POS",
             bluecode: {
-              member_id: "NGA0000187",
+              member_id: MEMBER_ID,
               instant_ng: "bluecode",
               blue_code: { enabled: true }, // ✅ NEW FIELD
               alipay: { enabled: false }, // ✅ optional
@@ -123,11 +121,7 @@ async function fetchMerchant(merchantExtId) {
     const response = await fetch(url, {
       method: "GET",
       headers: {
-        Authorization:
-          "Basic " +
-          btoa(
-            "fc1f9f72-02c9-47e2-99ea-bc33ba2906d4:da1616ef-caad-4c7b-b7af-e9b98fb97960"
-          ),
+        Authorization: "Basic " + btoa(ACQUIBASE_USERNAME_PASSWORD),
       },
     });
 
@@ -156,11 +150,7 @@ async function createBranch(merchantExtId, branchData) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "Basic " +
-          btoa(
-            "fc1f9f72-02c9-47e2-99ea-bc33ba2906d4:da1616ef-caad-4c7b-b7af-e9b98fb97960"
-          ),
+        Authorization: "Basic " + btoa(ACQUIBASE_USERNAME_PASSWORD),
       },
       body: JSON.stringify({
         branch: {
@@ -215,11 +205,7 @@ async function fetchBranch(merchantExtId, branchExtId) {
     const response = await fetch(url, {
       method: "GET",
       headers: {
-        Authorization:
-          "Basic " +
-          btoa(
-            "fc1f9f72-02c9-47e2-99ea-bc33ba2906d4:da1616ef-caad-4c7b-b7af-e9b98fb97960"
-          ),
+        Authorization: "Basic " + btoa(ACQUIBASE_USERNAME_PASSWORD),
       },
     });
 
@@ -247,11 +233,7 @@ async function updateBranch(merchantExtId, branchExtId, branchData) {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization:
-          "Basic " +
-          btoa(
-            "fc1f9f72-02c9-47e2-99ea-bc33ba2906d4:da1616ef-caad-4c7b-b7af-e9b98fb97960"
-          ),
+        Authorization: "Basic " + btoa(ACQUIBASE_USERNAME_PASSWORD),
       },
       body: JSON.stringify({
         branch: {
